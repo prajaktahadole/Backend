@@ -1,0 +1,172 @@
+
+C:\Users\prajakta hadole>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("9aa39af9-5e2a-414f-87e2-03433aa72e41") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-03-11T20:24:09.233+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin       0.000GB
+assignment  0.000GB
+config      0.000GB
+local       0.000GB
+movies      0.000GB
+school      0.000GB
+> use assignment
+switched to db assignment
+> show collections
+users
+> db.users.insertMany([{"first_name": "Dhaval", "last_name": "Chheda", "email":"xyz@gmail.com", "gender":"male", "age":40},{"first_name": "Dhanu", "last_name": "vija", "email":"cyz@gmail.com", "gender":"male", "age":10},{"first_name": "priya", "last_name": "Chandak", "email":"z@gmail.com", "gender":"female", "age":40},{"first_name": "pappu", "last_name": "deja", "email":"cyz@gmail.com", "gender":"male", "age":35},{"first_name": "Dyal", "last_name": "dodeja", "email":"xyz@gmail.com", "gender":"male", "age":40}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("622d2c3c1489c85bfb091afb"),
+                ObjectId("622d2c3c1489c85bfb091afc"),
+                ObjectId("622d2c3c1489c85bfb091afd"),
+                ObjectId("622d2c3c1489c85bfb091afe"),
+                ObjectId("622d2c3c1489c85bfb091aff")
+        ]
+}
+> db.users.find({}).pretty()
+{ "_id" : ObjectId("622d20b076e585eb9abb681d"), "first_name" : "prajakta" }
+{
+        "_id" : ObjectId("622d275d76e585eb9abb681e"),
+        "first_name" : "prajakta",
+        "last_name" : "hadole",
+        "email" : "xyz@gmail.com"
+}
+{
+        "_id" : ObjectId("622d27db76e585eb9abb681f"),
+        "first_name" : "Dhaval",
+        "last_name" : "Chheda",
+        "email" : "xyz@gmail.com",
+        "gender" : "male",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("622d29c776e585eb9abb6820"),
+        "first_name" : "Dhaval",
+        "last_name" : "Chheda",
+        "email" : "xyz@gmail.com",
+        "gender" : "male",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("622d2c3c1489c85bfb091afb"),
+        "first_name" : "Dhaval",
+        "last_name" : "Chheda",
+        "email" : "xyz@gmail.com",
+        "gender" : "male",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("622d2c3c1489c85bfb091afc"),
+        "first_name" : "Dhanu",
+        "last_name" : "vija",
+        "email" : "cyz@gmail.com",
+        "gender" : "male",
+        "age" : 10
+}
+{
+        "_id" : ObjectId("622d2c3c1489c85bfb091afd"),
+        "first_name" : "priya",
+        "last_name" : "Chandak",
+        "email" : "z@gmail.com",
+        "gender" : "female",
+        "age" : 40
+}
+{
+        "_id" : ObjectId("622d2c3c1489c85bfb091afe"),
+        "first_name" : "pappu",
+        "last_name" : "deja",
+        "email" : "cyz@gmail.com",
+        "gender" : "male",
+        "age" : 35
+}
+{
+        "_id" : ObjectId("622d2c3c1489c85bfb091aff"),
+        "first_name" : "Dyal",
+        "last_name" : "dodeja",
+        "email" : "xyz@gmail.com",
+        "gender" : "male",
+        "age" : 40
+}
+
+>db.users.update({first_name" : "prajakta}, {$set: {"age": 21}})>                              
+> db.users.find({}).pretty()                                                            
+{ "_id" : ObjectId("622d20b076e585eb9abb681d"), "first_name" : "prajakta" }            
+ {              
+    "_id" : ObjectId("622d275d76e585eb9abb681e"),                                         
+      "first_name" : "prajakta",                                                              
+      "last_name" : "hadole",                                                                 
+      "email" : "xyz@gmail.com",                                                              
+      "age" : 21                                                                      }                                                                                       {                                                                                            
+              
+              
+              
+          "_id" : ObjectId("622d27db76e585eb9abb681f"),                                           "first_name" : "Dhaval",                                                                
+      "last_name" : "Chheda",                                                                 
+      "email" : "xyz@gmail.com",                                                              
+      "gender" : "male",                                                                      
+      "age" : 40                                                                      }                                                                                       {                                                                                               
+        "_id" : ObjectId("622d29c776e585eb9abb6820"),                                           "first_name" : "Dhaval",                                                                
+      "last_name" : "Chheda",                                                                
+       "email" : "xyz@gmail.com",                                                            
+     "gender" : "male",                                                                     
+    "age" : 40                                                                      }                                                                                       {                                                                                              
+         "_id" : ObjectId("622d2c3c1489c85bfb091afb"),                                           "first_name" : "Dhaval",                                                                "last_name" : "Chheda",                                                                 
+         "email" : "xyz@gmail.com",                                                             
+        "gender" : "male",                                                                     
+         "age" : 40                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d2c3c1489c85bfb091afc"),                                          
+          "first_name" : "Dhanu",                                                                 "last_name" : "vija",                                                                  
+          "email" : "cyz@gmail.com",                                                              "gender" : "male",                                                                     
+           "age" : 10                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d2c3c1489c85bfb091afd"),                                           "first_name" : "priya",                                                                 "last_name" : "Chandak",                                                                "email" : "z@gmail.com",                                                                "gender" : "female",                                                                    
+           "age" : 40                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d2c3c1489c85bfb091afe"),                                           "first_name" : "pappu",                                                                 "last_name" : "deja",                                                                   "email" : "cyz@gmail.com",                                                              "gender" : "male",                                                                      
+           "age" : 35                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d2c3c1489c85bfb091aff"),                                           "first_name" : "Dyal",                                                                  "last_name" : "dodeja",                                                                 "email" : "xyz@gmail.com",                                                              "gender" : "male",                                                                      
+           "age" : 40                                                                      }                                                                                      
+        >db.user.remove({"_id" : ObjectId("622d20b076e585eb9abb681d")}> db.users.find({}).pretty()                                                      
+           
+ {              
+    "_id" : ObjectId("622d275d76e585eb9abb681e"),                                         
+      "first_name" : "prajakta",                                                              
+      "last_name" : "hadole",                                                                 
+      "email" : "xyz@gmail.com",                                                              
+      "age" : 21                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d27db76e585eb9abb681f"),                                           "first_name" : "Dhaval",                                                                
+      "last_name" : "Chheda",                                                                 
+      "email" : "xyz@gmail.com",                                                              
+      "gender" : "male",                                                                      
+      "age" : 40                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d29c776e585eb9abb6820"),                                           "first_name" : "Dhaval",                                                                
+      "last_name" : "Chheda",                                                                
+       "email" : "xyz@gmail.com",                                                            
+     "gender" : "male",                                                                     
+    "age" : 40                                                                      }                                                                                       {                                                                                              
+         "_id" : ObjectId("622d2c3c1489c85bfb091afb"),                                           "first_name" : "Dhaval",                                                                "last_name" : "Chheda",                                                                 
+         "email" : "xyz@gmail.com",                                                             
+        "gender" : "male",                                                                     
+         "age" : 40                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d2c3c1489c85bfb091afc"),                                           "first_name" : "Dhanu",                                                                 "last_name" : "vija",                                                                  
+          "email" : "cyz@gmail.com",                                                              "gender" : "male",                                                                     
+           "age" : 10                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d2c3c1489c85bfb091afd"),                                           "first_name" : "priya",                                                                 "last_name" : "Chandak",                                                                "email" : "z@gmail.com",                                                                "gender" : "female",                                                                    
+           "age" : 40                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d2c3c1489c85bfb091afe"),                                           "first_name" : "pappu",                                                                 "last_name" : "deja",                                                                   "email" : "cyz@gmail.com",                                                              "gender" : "male",                                                                      
+           "age" : 35                                                                      }                                                                                       {                                                                                               "_id" : ObjectId("622d2c3c1489c85bfb091aff"),                                           "first_name" : "Dyal",                                                                  "last_name" : "dodeja",                                                                 "email" : "xyz@gmail.com",                                                              "gender" : "male",                                                                      
+           "age" : 40                                                                      }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
